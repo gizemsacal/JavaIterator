@@ -1,0 +1,40 @@
+package com.company;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+class Main {
+    public static void main(String[] args) {
+        // Creating an ArrayList
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(1);
+        numbers.add(3);
+        numbers.add(2);
+        System.out.println("ArrayList: " + numbers);
+
+        // Creating an instance of Iterator
+        Iterator<Integer> iterate = numbers.iterator();
+
+        // Using the next() method
+        int number = iterate.next();
+        System.out.println("Erişilen Öğe: " + number);
+
+        // Using the remove() method
+        iterate.remove();
+        System.out.println("Kaldırılan Öğe: " + number);
+
+        System.out.print("Güncellenmiş DiziList: ");
+
+        // Using the hasNext() method
+        while(iterate.hasNext()) {
+            // Using the forEachRemaining() method
+            iterate.forEachRemaining((value) -> System.out.print(value + ", "));
+        }
+    }
+    /*
+    iterate.forEachRemaining((value) -> System.put.print(value + ", "));
+        Burada, lambda ifadesiniforEachRemaining() yöntemin bir argümanı olarak geçtik .
+
+        Şimdi yöntem, dizi listesinin kalan tüm öğelerini yazdıracaktır.
+        */
+}
